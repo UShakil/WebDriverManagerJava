@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 
 public class DifferentBrowserTests extends BaseTests {
@@ -16,10 +17,6 @@ public class DifferentBrowserTests extends BaseTests {
     public void testParametersWithXML() throws InterruptedException{
 
         driver.navigate().to("https://github.com/bonigarcia/webdrivermanager/");
-
-        String expectedDescription = "Automatic management of Selenium WebDriver binaries";
-        String actualDescription =  driver.findElement(txtAbout).getText();
-
-        assertEquals(expectedDescription, actualDescription, "There is a mismatch between expected and actual values");
+        assertTrue(driver.findElement(txtAbout).isDisplayed());
     }
 }
